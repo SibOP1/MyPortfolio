@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url(home-page.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 7%;
+    width: 100%;
+    height: 7vh;
+    background-color: transparent;
+    backdrop-filter: blur(40px);
+    border-bottom: 2px solid grey;
+    position: fixed;
+    z-index: 100;
+}
+
+.link {
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.header h1 {
+    color: aliceblue;
+}
+
+.home {
+    width: 100%;
+    height: 100vh;    
+}
+
+.sec1 , .sec2, .sec3 {
+    width: 100%;
+    height: 95vh;    
+}
+
+.sec1 {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5rem;
+    height: 100vh;    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.sec2 {
+    background-color: rgb(1, 1, 32);
+    height: 100vh;
+}
+
+.sec3 {
+    background-color: rgb(13, 82, 128);
+}
+
+.top {
+    width: 100%;
+    height: .5vh;
+    background-color: rgba(95, 95, 95, 0.603);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.intro1, .intro2 {
+    width: 30%;
+    height: 15vh;
+}
+
+.intro1 {
+    width: 550px;
+}
+
+.intro1 h2 {
+    font-size: 34px;
+    line-height: 30px;
+    font-weight: 650;
+    text-shadow: 0 2.5px 10px black;
+}
+
+.intro1 h1 {
+    letter-spacing: 1px;
+    font-size: 50px;
+    line-height: 60px;
+    margin-bottom: 3px;
+    text-shadow: 0 2.5px 10px black;
+}
+
+.intro1 h3 {
+    font-size: 25px;
+    font-weight: 700;
+    color: orange;
+    text-shadow: 0 2.5px 10px black;
+}
+
+.intro1 p {
+    text-shadow: 0 2.5px 10px black;
+    letter-spacing: 0.5px;
+}
+
+.sci-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sci-icons a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 15px;
+    border: 3px solid aqua;
+    border-radius: 15px;
+    justify-content: center;
+    position: relative;
+    width: 40px;
+    color: black;
+    height: 40px;
+    font-size: 20px;
+    overflow: hidden;
+    z-index: 1;
+    transition: .5s;
+}
+
+.sci-icons a:nth-child(1) {
+    animation: float 2s ease-in-out forwards infinite;
+    animation-delay: 1s;
+}
+
+.sci-icons a:nth-child(2) {
+    animation: float 2s ease-in-out forwards infinite;
+    animation-delay: 1.25s;
+}
+
+.sci-icons a:nth-child(3) {
+    animation: float 2s ease-in-out forwards infinite;
+    animation-delay: 1.5s;
+}
+
+.sci-icons a::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-color: aqua;
+    transition: .5s;
+    z-index: -1;
+    animation: floatbg 2s ease-in-out forwards infinite;
+    animation-delay: 1.5s;
+}
+
+.sci-icons a:hover::before {
+    width: 100%;
+    /* box-shadow: 0 0 25px 20px aquamarine; */
+}
+
+/* .sci-icons a:hover {
+    box-shadow: 0 0 25px 20px aquamarine;
+} */
+
+.intro2 {
+    width: 250px;
+}
+
+@media screen and (min-width: 900px) and (max-width: 4000px) {
+    .menu-mb {
+        display: none;
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 900px) {
+    .menu {
+        display: none;
+    }
+    .menu-mb {
+        display: absolute;
+    }
+}
+
+@media screen and (min-width: 370px) and (max-width: 500px) {
+    .intro1 {
+        justify-self: normal;
+        margin-bottom: 75%;
+        height: 50vh;
+    }
+    .intro1 h1 {
+        font-size: 40px;
+        line-height: 40px;
+    }
+    .intro1 h2 {
+        font-size: 25px;
+    }
+    .intro1 h3 {
+        margin-bottom: 95%;
+        font-size: 15px;
+    }
+    .intro2 {
+        margin-left: 18%;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+        box-shadow: 0 0 0px 0px aquamarine;
+    }
+    50% {
+        transform: translateY(20px);
+        box-shadow: 0 0 25px 10px aquamarine;
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes floatbg {
+    0% {
+        transform: translateY(0px);
+        box-shadow: 0 0 0px 0px aquamarine;
+    }
+    50% {
+        transform: translateY(20px);
+        box-shadow: 0 0 25px 10px aquamarine;
+    }
+}
